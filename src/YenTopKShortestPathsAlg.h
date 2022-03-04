@@ -34,15 +34,14 @@ private:
 
 public:
 
-	YenTopKShortestPathsAlg(const Graph& graph)
+	YenTopKShortestPathsAlg(Graph* graph)
 	{
 		YenTopKShortestPathsAlg(graph, NULL, NULL);
 	}
 
-	YenTopKShortestPathsAlg(const Graph& graph, BaseVertex* pSource, BaseVertex* pTarget)
-		:m_pSourceVertex(pSource), m_pTargetVertex(pTarget)
+	YenTopKShortestPathsAlg(Graph* graph, BaseVertex* pSource, BaseVertex* pTarget)
+		:m_pGraph(graph), m_pSourceVertex(pSource), m_pTargetVertex(pTarget)
 	{
-		m_pGraph = new Graph(graph);
 		_init();
 	}
 
